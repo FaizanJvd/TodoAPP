@@ -1,0 +1,54 @@
+.profile-img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+}
+.profile-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #79b3ff;
+}
+.head{
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 3em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 2px solid #79b3ff;
+}
+.head p{
+    color: white;
+    font-size: 1.5em;
+    font-weight: 100;
+    margin: 0.5em;
+
+}
+.head i{
+    cursor: pointer;
+}
+.head span{
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #000000;
+    margin: 0.5em;
+}
+.down_arrow{
+    margin-left: 3em !important;
+}
+.add-icon{
+    margin-left: 0.5em;
+    color: #79b3ff;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+.add-icon:hover{
+    color: #0b0b0c;
+    font-size: 1em;
+}
+.add-icon-close{
+    visibility: collapse;
+}

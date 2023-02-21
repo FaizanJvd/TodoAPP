@@ -1,0 +1,74 @@
+.task{
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    width: 21%;
+    margin: 0 auto;
+    margin-top: 1em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid #000000;
+    background-color: azure;
+}
+.close{
+  visibility: collapse;
+}
+.task li{
+    list-style: none;
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #000000;
+}
+.task li:hover{
+    background-color: #b3b3b3;
+}
+.task li input{
+    margin: 0.5em;
+    justify-self: start;
+}
+.task li span{
+    font-size: 1em;
+    font-weight: 100;
+    color: #000000;
+    margin: 0.5em;
+}
+.task li button{
+    border: none;
+    background-color: transparent;
+    font-size: 1em;
+    font-weight: 100;
+    color: #000000;
+    margin: 0.5em;
+    cursor: pointer;
+}
+.task li button i{
+    margin: 0.2em;
+    color: #000000;
+    cursor: pointer;
+}
+.dropdown {
+    position: relative;
+    display: inline;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: azure;
+    width: fit-content;
+    box-shadow: 1px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 25px;
+    padding: 5px 8px;
+    z-index: 1;
+  }
+  .dropdown-content i{
+    cursor: pointer;
+  }
+  .dropdown-content i:hover{
+    color: rgb(18, 55, 222);
+  }
+  .dropdown:hover .dropdown-content {
+    display: inline;
+  }
