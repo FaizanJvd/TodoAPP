@@ -1,7 +1,7 @@
 var cors = require('cors');
 var express = require('express');
-const mongoose = require('mongoose');
 
+require('./database/databaseConnection')
 var todo = require('./routes/todo');
 
 var app = express();
@@ -15,9 +15,6 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect("mongodb://localhost:27017/TodoApp").then(() => {
-    console.log('connected to MongoDB')
-}).catch((err) => console.log(err));
 app.use('/',todo);
 const port = 4000;
 app.listen(port,()=>{

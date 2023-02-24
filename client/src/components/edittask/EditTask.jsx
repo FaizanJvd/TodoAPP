@@ -6,8 +6,8 @@ const EditTask = (props) => {
     const [todo, setTodo] = useState({
         title: props.title,
         status: props.status,
-        completionTime: props.completion_time,
-        creationTime: props.creation_time,
+        completionTime: props.completionTime,
+        creationTime: props.creationTime,
       });
       let name, value;
       const handleInput = (e) => {
@@ -18,7 +18,7 @@ const EditTask = (props) => {
       const postData = async (e) => {
         e.preventDefault();
         const { title,status } = todo;
-        const res = await Axios.put("http://localhost:4000/EditTodo", {
+        const res = await Axios.put("http://localhost:4000/todos", {
           id:props._id,
           title,
           status,
@@ -27,14 +27,14 @@ const EditTask = (props) => {
         if (res.status === 200) {
           props.handler();
         } 
-        if(res.status === 404){
+        if(res.status === 400){
           alert(data.message);
         }
       };
   return (
     <div class="main-box">
       <h2>Task</h2>
-      <form onSubmit={postData}>
+      <form onSubmit={postData} onKeyDown>
         <div class="user-box">
           <input type="text" required name="title" onChange={handleInput} value={todo.title}/>
           <label>Title</label>
@@ -44,11 +44,11 @@ const EditTask = (props) => {
           <label>Status</label>
         </div>
         <div class="user-box">
-          <input type="text" value={todo.completionTime}/>
+          <input type="text" value={todo.completionTime && String(todo.completionTime).split("T")[0]+"  /  "+String(todo.completionTime).split("T")[1].split(".")[0]}/>
           <label>Completion Time</label>
         </div>
         <div class="user-box">
-          <input type="text" value={todo.creationTime}/>
+          <input type="text" value={String(todo.creationTime).split("T")[0]+"  /  "+String(todo.creationTime).split("T")[1].split(".")[0]}/>
           <label>Creation Time</label>
         </div>
         <div class="form-buttons">

@@ -6,11 +6,11 @@ const todoSchema = new mongoose.Schema({
   status: {
     type: String,
   },
-  completion_time: {
-    type: String,
+  completionTime: {
+    type: Date,
   },
-  creation_time: {
-    type: String,
+  creationTime: {
+    type: Date,
     },
 });
 module.exports = mongoose.model("todo", todoSchema, "todos");

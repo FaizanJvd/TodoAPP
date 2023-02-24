@@ -17,7 +17,7 @@ const AddTask = () => {
   const postData = async (e) => {
     e.preventDefault();
     const { title,status } = todo;
-    const res = await Axios.post("http://localhost:4000/addTodo", {
+    const res = await Axios.post("http://localhost:4000/todos", {
       title,
       status,
     });
@@ -25,7 +25,7 @@ const AddTask = () => {
     if (res.status === 200) {
       toast.success(data.message);
     }
-    if(res.status === 404){
+    if(res.status === 400){
       toast.error(data.message);
     }
   };

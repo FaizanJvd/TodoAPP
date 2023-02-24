@@ -7,7 +7,7 @@ const TodoList = (props) => {
   const [openEdit, setOpenEdit] = useState(false);
   const [todoData, setTodoData] = useState();
   const getAllTodos = () => {
-    Axios.get("http://localhost:4000/getTodos").then((res) => {
+    Axios.get("http://localhost:4000/todos").then((res) => {
       console.log(res.data);
       setTodos(res.data);
     });
@@ -17,12 +17,12 @@ const TodoList = (props) => {
   }, [props.open,openEdit]);
 
   const deleteTodo = (id) => {
-    Axios.delete(`http://localhost:4000/deleteTodo/${id}`).then((res) => {
+    Axios.delete(`http://localhost:4000/todos/${id}`).then((res) => {
       getAllTodos();
     });
   }
   const getTodo = (id) => {
-    Axios.get(`http://localhost:4000/getTodo/${id}`).then((res) => {
+    Axios.get(`http://localhost:4000/todos/${id}`).then((res) => {
     setTodoData(res.data);
     setOpenEdit(!openEdit);
     });
