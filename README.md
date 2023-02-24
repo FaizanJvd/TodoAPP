@@ -10,6 +10,7 @@ User Interface of Application is intractive.
 ![App Screenshot](screenShots/AddTask.JPG)
 ![App Screenshot](screenShots/TasksPage.JPG)
 ![App Screenshot](screenShots/EditAndViewTask.JPG)
+![App Screenshot](screenShots/unitTestResults.JPG)
 ## Run Locally
 
 Clone the project
@@ -31,7 +32,10 @@ Install dependencies
 ```
 
 Start the server
-
+  npm start
+  
+Test the Backend Server run
+  npm test
 ```bash
   npm run start
 ```
